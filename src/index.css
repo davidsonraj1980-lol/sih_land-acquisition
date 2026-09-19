@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-navy: #1a2744;
+  --color-navy-light: #243352;
+  --color-navy-muted: #8b9bb5;
+  --color-safed: #f7f8fa;
+  --color-tamba: #b45309;
+  --color-harit: #166534;
+  --color-neel: #2563eb;
+  --color-neel-light: #dbeafe;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
