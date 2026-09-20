@@ -4331,16 +4331,22 @@ export default function LandAcquisitionDashboard() {
       </header>
 
       {/* Primary Horizontal Navigation Bar (Deep Navy #0b2545) */}
-      <nav className="bg-[#0b2545] text-white px-4 sm:px-8 border-b border-[#081b33] shadow-xs">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-1 sm:gap-2">
+      <nav
+        className="bg-[#0b2545] text-white px-4 sm:px-8 border-b border-[#081b33] shadow-xs no-scrollbar"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        <div
+          className="max-w-[1440px] mx-auto flex items-center justify-between overflow-x-auto no-scrollbar"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          <div className="flex items-center gap-0.5 sm:gap-1.5">
             {navItems.map(({ label, icon: Icon, badge, badgeColor }) => {
               const on = active === label;
               return (
                 <button
                   key={label}
                   onClick={() => nav(label)}
-                  className={`relative flex items-center gap-2 px-4 py-3 text-[13px] font-medium whitespace-nowrap transition-colors ${
+                  className={`relative flex items-center gap-1.5 px-3 py-2.5 text-[12.5px] font-medium whitespace-nowrap transition-colors ${
                     on
                       ? "text-white font-semibold"
                       : "text-slate-300 hover:text-white hover:bg-white/5"
@@ -4361,7 +4367,7 @@ export default function LandAcquisitionDashboard() {
             })}
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 text-[11px] font-mono text-amber-300/90 whitespace-nowrap pl-4">
+          <div className="hidden md:flex items-center gap-2 text-[11px] font-mono text-amber-300/90 whitespace-nowrap pl-3">
             <span>NIC Node:</span>
             <span className="font-bold text-amber-200">DL-SEC-04</span>
           </div>
