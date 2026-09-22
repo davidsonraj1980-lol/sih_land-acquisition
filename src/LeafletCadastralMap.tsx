@@ -332,6 +332,408 @@ export const statutoryCadastralParcels: CadastralFeature[] = [
     ],
     center: [13.1993, 77.7098],
   },
+
+  // ── Gujarat GIDC Dholera SIR Expressway corridor parcels (Ahmedabad) ──
+  {
+    id: "PAR-GUJ-01",
+    acquisitionId: "LA-004",
+    gatNo: "Khata No. 204/1",
+    ulpin: "GJ-AHM-2024-4101",
+    owner: "Karsanbhai Raghavbhai Patel & Co-owners",
+    authority: "GIDC",
+    district: "Ahmedabad",
+    taluka: "Dholera",
+    village: "Bavaliari (SIR Activation Zone)",
+    areaHa: 4.50,
+    areaGuntha: 180,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 5400,
+    marketValueCr: 3.65,
+    solatiumCr: 3.65,
+    totalAwardCr: 7.30,
+    status: "Cleared",
+    coordinates: [
+      [22.2475, 72.1820],
+      [22.2505, 72.1815],
+      [22.2505, 72.1855],
+      [22.2475, 72.1860],
+    ],
+    center: [22.2490, 72.1838],
+  },
+  {
+    id: "PAR-GUJ-02",
+    acquisitionId: "LA-004",
+    gatNo: "Survey No. 205/2",
+    ulpin: "GJ-AHM-2024-4102",
+    owner: "Bhikhabhai Somabhai Gohil",
+    authority: "GIDC",
+    district: "Ahmedabad",
+    taluka: "Dholera",
+    village: "Bavaliari (SIR Activation Zone)",
+    areaHa: 3.10,
+    areaGuntha: 124,
+    landClass: "Jirayat (Dry crop)",
+    circleRatePerSqM: 4800,
+    marketValueCr: 2.23,
+    solatiumCr: 2.23,
+    totalAwardCr: 4.46,
+    status: "Disputed",
+    disputeNote: "Gujarat HC SCA 9021/2024 (Section 26 Valuation Rate Challenge)",
+    coordinates: [
+      [22.2505, 72.1815],
+      [22.2535, 72.1810],
+      [22.2535, 72.1850],
+      [22.2505, 72.1855],
+    ],
+    center: [22.2520, 72.1833],
+  },
+  {
+    id: "PAR-GUJ-03",
+    acquisitionId: "LA-005",
+    gatNo: "Survey No. 206/1A",
+    ulpin: "GJ-AHM-2024-4103",
+    owner: "Pravinbhai K. Solanki",
+    authority: "GIDC",
+    district: "Ahmedabad",
+    taluka: "Dholera",
+    village: "Bavaliari (SIR Activation Zone)",
+    areaHa: 3.80,
+    areaGuntha: 152,
+    landClass: "Jirayat (Dry crop)",
+    circleRatePerSqM: 4800,
+    marketValueCr: 2.74,
+    solatiumCr: 2.74,
+    totalAwardCr: 5.48,
+    status: "Pending",
+    disputeNote: "Section 15 Gram Sabha hearing report under compilation by Collector",
+    coordinates: [
+      [22.2535, 72.1810],
+      [22.2565, 72.1805],
+      [22.2565, 72.1845],
+      [22.2535, 72.1850],
+    ],
+    center: [22.2550, 72.1828],
+  },
+  {
+    id: "PAR-GUJ-04",
+    acquisitionId: "LA-005",
+    gatNo: "Survey No. 207/3",
+    ulpin: "GJ-AHM-2024-4104",
+    owner: "Dholera Agro Farmers Producer Co.",
+    authority: "GIDC",
+    district: "Ahmedabad",
+    taluka: "Dholera",
+    village: "Bavaliari (SIR Activation Zone)",
+    areaHa: 5.20,
+    areaGuntha: 208,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 5400,
+    marketValueCr: 4.21,
+    solatiumCr: 4.21,
+    totalAwardCr: 8.42,
+    status: "Cleared",
+    coordinates: [
+      [22.2475, 72.1862],
+      [22.2505, 72.1857],
+      [22.2505, 72.1895],
+      [22.2475, 72.1900],
+    ],
+    center: [22.2490, 72.1878],
+  },
+  {
+    id: "PAR-GUJ-05",
+    acquisitionId: "LA-004",
+    gatNo: "Survey No. 208/1B",
+    ulpin: "GJ-AHM-2024-4105",
+    owner: "Manilal Devjibhai Vankar",
+    authority: "GIDC",
+    district: "Ahmedabad",
+    taluka: "Dholera",
+    village: "Bavaliari (SIR Activation Zone)",
+    areaHa: 3.60,
+    areaGuntha: 144,
+    landClass: "Padit (Fallow)",
+    circleRatePerSqM: 4500,
+    marketValueCr: 2.43,
+    solatiumCr: 2.43,
+    totalAwardCr: 4.86,
+    status: "Cleared",
+    coordinates: [
+      [22.2505, 72.1857],
+      [22.2535, 72.1852],
+      [22.2535, 72.1890],
+      [22.2505, 72.1895],
+    ],
+    center: [22.2520, 72.1873],
+  },
+
+  // ── Tamil Nadu SIPCOT Sriperumbudur Electronics Corridor parcels (Kanchipuram) ──
+  {
+    id: "PAR-TN-01",
+    acquisitionId: "LA-006",
+    gatNo: "Survey No. 112/2A",
+    ulpin: "TN-KCH-2024-7701",
+    owner: "S. Murugan & Muthulakshmi Ammal",
+    authority: "SIPCOT",
+    district: "Kanchipuram",
+    taluka: "Sriperumbudur",
+    village: "Mambakkam (Electronics Corridor)",
+    areaHa: 3.60,
+    areaGuntha: 144,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 6800,
+    marketValueCr: 3.67,
+    solatiumCr: 3.67,
+    totalAwardCr: 7.34,
+    status: "Cleared",
+    coordinates: [
+      [12.9650, 79.9420],
+      [12.9680, 79.9438],
+      [12.9680, 79.9470],
+      [12.9650, 79.9452],
+    ],
+    center: [12.9665, 79.9445],
+  },
+  {
+    id: "PAR-TN-02",
+    acquisitionId: "LA-006",
+    gatNo: "Survey No. 113/1B",
+    ulpin: "TN-KCH-2024-7702",
+    owner: "K. Ranganathan & Brothers",
+    authority: "SIPCOT",
+    district: "Kanchipuram",
+    taluka: "Sriperumbudur",
+    village: "Mambakkam (Electronics Corridor)",
+    areaHa: 2.70,
+    areaGuntha: 108,
+    landClass: "Jirayat (Dry crop)",
+    circleRatePerSqM: 6200,
+    marketValueCr: 2.51,
+    solatiumCr: 2.51,
+    totalAwardCr: 5.02,
+    status: "Disputed",
+    disputeNote: "Madras HC WP 18234/2024 (Section 28 Multiplier factor in peri-urban Chennai challenge)",
+    coordinates: [
+      [12.9680, 79.9438],
+      [12.9710, 79.9455],
+      [12.9710, 79.9487],
+      [12.9680, 79.9470],
+    ],
+    center: [12.9695, 79.9462],
+  },
+  {
+    id: "PAR-TN-03",
+    acquisitionId: "LA-007",
+    gatNo: "Survey No. 114/3",
+    ulpin: "TN-KCH-2024-7703",
+    owner: "Tmt. V. Annapoornani",
+    authority: "SIPCOT",
+    district: "Kanchipuram",
+    taluka: "Sriperumbudur",
+    village: "Mambakkam (Electronics Corridor)",
+    areaHa: 4.10,
+    areaGuntha: 164,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 6800,
+    marketValueCr: 4.18,
+    solatiumCr: 4.18,
+    totalAwardCr: 8.36,
+    status: "Pending",
+    disputeNote: "Form VIII award inquiry hearing scheduled with DRO (Land Acquisition)",
+    coordinates: [
+      [12.9710, 79.9455],
+      [12.9740, 79.9472],
+      [12.9740, 79.9504],
+      [12.9710, 79.9487],
+    ],
+    center: [12.9725, 79.9480],
+  },
+  {
+    id: "PAR-TN-04",
+    acquisitionId: "LA-007",
+    gatNo: "Survey No. 115/2",
+    ulpin: "TN-KCH-2024-7704",
+    owner: "Sriperumbudur Industrial Holdings & Trust",
+    authority: "SIPCOT",
+    district: "Kanchipuram",
+    taluka: "Sriperumbudur",
+    village: "Mambakkam (Electronics Corridor)",
+    areaHa: 4.80,
+    areaGuntha: 192,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 6800,
+    marketValueCr: 4.90,
+    solatiumCr: 4.90,
+    totalAwardCr: 9.80,
+    status: "Cleared",
+    coordinates: [
+      [12.9650, 79.9455],
+      [12.9680, 79.9473],
+      [12.9680, 79.9505],
+      [12.9650, 79.9487],
+    ],
+    center: [12.9665, 79.9480],
+  },
+  {
+    id: "PAR-TN-05",
+    acquisitionId: "LA-006",
+    gatNo: "Survey No. 116/1",
+    ulpin: "TN-KCH-2024-7705",
+    owner: "D. Arumugam Pillai",
+    authority: "SIPCOT",
+    district: "Kanchipuram",
+    taluka: "Sriperumbudur",
+    village: "Mambakkam (Electronics Corridor)",
+    areaHa: 3.20,
+    areaGuntha: 128,
+    landClass: "Padit (Fallow)",
+    circleRatePerSqM: 6000,
+    marketValueCr: 2.88,
+    solatiumCr: 2.88,
+    totalAwardCr: 5.76,
+    status: "Cleared",
+    coordinates: [
+      [12.9680, 79.9473],
+      [12.9710, 79.9490],
+      [12.9710, 79.9522],
+      [12.9680, 79.9505],
+    ],
+    center: [12.9695, 79.9498],
+  },
+
+  // ── Rajasthan RIICO Neemrana Japanese Industrial Corridor parcels (Kotputli-Behror / Alwar) ──
+  {
+    id: "PAR-RAJ-01",
+    acquisitionId: "LA-008",
+    gatNo: "Khasra No. 341/2",
+    ulpin: "RJ-ALW-2024-5501",
+    owner: "Chaudhary Balram Singh & Legal Heirs",
+    authority: "RIICO",
+    district: "Kotputli-Behror",
+    taluka: "Neemrana",
+    village: "Majrakath (Japanese Zone)",
+    areaHa: 4.30,
+    areaGuntha: 172,
+    landClass: "Jirayat (Dry crop)",
+    circleRatePerSqM: 4600,
+    marketValueCr: 2.97,
+    solatiumCr: 2.97,
+    totalAwardCr: 5.94,
+    status: "Cleared",
+    coordinates: [
+      [27.9890, 76.3850],
+      [27.9920, 76.3868],
+      [27.9920, 76.3900],
+      [27.9890, 76.3882],
+    ],
+    center: [27.9905, 76.3875],
+  },
+  {
+    id: "PAR-RAJ-02",
+    acquisitionId: "LA-008",
+    gatNo: "Khasra No. 342/1",
+    ulpin: "RJ-ALW-2024-5502",
+    owner: "Hukumchand Yadav & Sons",
+    authority: "RIICO",
+    district: "Kotputli-Behror",
+    taluka: "Neemrana",
+    village: "Majrakath (Japanese Zone)",
+    areaHa: 3.40,
+    areaGuntha: 136,
+    landClass: "Jirayat (Dry crop)",
+    circleRatePerSqM: 4600,
+    marketValueCr: 2.35,
+    solatiumCr: 2.35,
+    totalAwardCr: 4.70,
+    status: "Disputed",
+    disputeNote: "Rajasthan HC (Jaipur Bench) CW 7812/2024 (Solatium Disbursement Dispute)",
+    coordinates: [
+      [27.9920, 76.3868],
+      [27.9950, 76.3885],
+      [27.9950, 76.3917],
+      [27.9920, 76.3900],
+    ],
+    center: [27.9935, 76.3892],
+  },
+  {
+    id: "PAR-RAJ-03",
+    acquisitionId: "LA-009",
+    gatNo: "Khasra No. 343/3B",
+    ulpin: "RJ-ALW-2024-5503",
+    owner: "Smt. Shanti Devi Gurjar",
+    authority: "RIICO",
+    district: "Kotputli-Behror",
+    taluka: "Neemrana",
+    village: "Majrakath (Japanese Zone)",
+    areaHa: 3.90,
+    areaGuntha: 156,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 5100,
+    marketValueCr: 2.98,
+    solatiumCr: 2.98,
+    totalAwardCr: 5.96,
+    status: "Pending",
+    disputeNote: "Section 19 statutory declaration verification under review",
+    coordinates: [
+      [27.9950, 76.3885],
+      [27.9980, 76.3902],
+      [27.9980, 76.3934],
+      [27.9950, 76.3917],
+    ],
+    center: [27.9965, 76.3910],
+  },
+  {
+    id: "PAR-RAJ-04",
+    acquisitionId: "LA-009",
+    gatNo: "Khasra No. 344/1A",
+    ulpin: "RJ-ALW-2024-5504",
+    owner: "Prithviraj Meena & Co-sharers",
+    authority: "RIICO",
+    district: "Kotputli-Behror",
+    taluka: "Neemrana",
+    village: "Majrakath (Japanese Zone)",
+    areaHa: 5.10,
+    areaGuntha: 204,
+    landClass: "Bagayat (Irrigated)",
+    circleRatePerSqM: 5100,
+    marketValueCr: 3.90,
+    solatiumCr: 3.90,
+    totalAwardCr: 7.80,
+    status: "Cleared",
+    coordinates: [
+      [27.9890, 76.3885],
+      [27.9920, 76.3903],
+      [27.9920, 76.3935],
+      [27.9890, 76.3917],
+    ],
+    center: [27.9905, 76.3910],
+  },
+  {
+    id: "PAR-RAJ-05",
+    acquisitionId: "LA-008",
+    gatNo: "Khasra No. 345/2",
+    ulpin: "RJ-ALW-2024-5505",
+    owner: "Neemrana Industrial Cooperative",
+    authority: "RIICO",
+    district: "Kotputli-Behror",
+    taluka: "Neemrana",
+    village: "Majrakath (Japanese Zone)",
+    areaHa: 4.00,
+    areaGuntha: 160,
+    landClass: "Padit (Fallow)",
+    circleRatePerSqM: 4200,
+    marketValueCr: 2.52,
+    solatiumCr: 2.52,
+    totalAwardCr: 5.04,
+    status: "Cleared",
+    coordinates: [
+      [27.9920, 76.3903],
+      [27.9950, 76.3920],
+      [27.9950, 76.3952],
+      [27.9920, 76.3935],
+    ],
+    center: [27.9935, 76.3928],
+  },
 ];
 
 // Proposed 90-Meter Right-of-Way (ROW) Expressway / Highway Centerlines
@@ -348,6 +750,30 @@ const kiadbRowCorridor: [number, number][] = [
   [13.1975, 77.7075],
   [13.2005, 77.7092],
   [13.2035, 77.7108],
+];
+
+const gidcRowCorridor: [number, number][] = [
+  [22.2460, 72.1820],
+  [22.2490, 72.1840],
+  [22.2520, 72.1860],
+  [22.2550, 72.1880],
+  [22.2580, 72.1900],
+];
+
+const sipcotRowCorridor: [number, number][] = [
+  [12.9635, 79.9425],
+  [12.9665, 79.9442],
+  [12.9695, 79.9460],
+  [12.9725, 79.9478],
+  [12.9755, 79.9495],
+];
+
+const riicoRowCorridor: [number, number][] = [
+  [27.9875, 76.3855],
+  [27.9905, 76.3872],
+  [27.9935, 76.3890],
+  [27.9965, 76.3908],
+  [27.9995, 76.3925],
 ];
 
 interface LeafletCadastralMapProps {
@@ -388,10 +814,24 @@ export default function LeafletCadastralMap({
   const mapCenter: [number, number] =
     selectedAuthority === "KIADB"
       ? [13.1990, 77.7082]
+      : selectedAuthority === "GIDC"
+      ? [22.2520, 72.1860]
+      : selectedAuthority === "SIPCOT"
+      ? [12.9690, 79.9460]
+      : selectedAuthority === "RIICO"
+      ? [27.9930, 76.3890]
       : [18.7582, 73.8596];
 
   const currentCorridor =
-    selectedAuthority === "KIADB" ? kiadbRowCorridor : puneRowCorridor;
+    selectedAuthority === "KIADB"
+      ? kiadbRowCorridor
+      : selectedAuthority === "GIDC"
+      ? gidcRowCorridor
+      : selectedAuthority === "SIPCOT"
+      ? sipcotRowCorridor
+      : selectedAuthority === "RIICO"
+      ? riicoRowCorridor
+      : puneRowCorridor;
 
   // Tile Providers: Clean OpenStreetMap (2D) and Esri World Imagery (Satellite)
   const getTileUrl = (layer: "cadastral" | "satellite" | "alignment") => {
@@ -465,11 +905,15 @@ export default function LeafletCadastralMap({
     tileLayerRef.current = newTile;
   }, [activeLayer]);
 
-  // ── Recenter Map when Authority Changes ──
+  // ── Recenter Map when Authority Changes or Selected Parcel changes ──
   useEffect(() => {
     if (!mapInstanceRef.current) return;
-    mapInstanceRef.current.setView(mapCenter, 16);
-  }, [selectedAuthority]);
+    if (selectedParcel) {
+      mapInstanceRef.current.setView(selectedParcel.center, 16);
+    } else {
+      mapInstanceRef.current.setView(mapCenter, 16);
+    }
+  }, [selectedAuthority, selectedParcel?.id]);
 
   // ── Render Contiguous Cadastral Polygons, ROW Corridor & Survey Stones ──
   useEffect(() => {
@@ -700,9 +1144,9 @@ export default function LeafletCadastralMap({
           <span>Cadastral Spatial Engine • Survey of India Datum</span>
         </div>
         <div className="mt-1 flex items-center gap-3 text-[10px] text-slate-600 font-mono">
-          <span>Projection: <strong>WGS 84 / UTM Zone 43N</strong></span>
+          <span>Projection: <strong>{selectedAuthority === "SIPCOT" ? "WGS 84 / UTM Zone 44N" : "WGS 84 / UTM Zone 43N"}</strong></span>
           <span>•</span>
-          <span>Datum: <strong>EPSG:32643</strong></span>
+          <span>Datum: <strong>{selectedAuthority === "SIPCOT" ? "EPSG:32644" : "EPSG:32643"}</strong></span>
         </div>
       </div>
 

@@ -1409,6 +1409,64 @@ function AcquisitionDetailsModal({
 /* ════════════════════════════════════════════════════════════════
    PAGE 1: SPATIAL MAP (Interactive GIS & Cadastral Parcels)
    ════════════════════════════════════════════════════════════════ */
+type CorridorSector = "Pune" | "Bengaluru" | "Dholera" | "Sriperumbudur" | "Neemrana";
+
+const corridorMeta: Record<CorridorSector, {
+  label: string;
+  fullName: string;
+  authority: AuthorityCode;
+  epsg: string;
+  rorName: string;
+  rorSystem: string;
+  tenureTitle: string;
+}> = {
+  Pune: {
+    label: "MIDC Pune (Chakan Link, NH-60)",
+    fullName: "Pune (Haveli Taluka — Wadgaon Sheri Corridor)",
+    authority: "MIDC",
+    epsg: "EPSG:32643",
+    rorName: "गाव नमुना ७/१२ (Form VII & XII Extract)",
+    rorSystem: "Government of Maharashtra • Mahabhulekh Portal",
+    tenureTitle: "Class-1 Occupant (Bhogwatdar-1)",
+  },
+  Bengaluru: {
+    label: "KIADB Bengaluru (Devanahalli Aerospace SEZ)",
+    fullName: "Bengaluru Rural (Devanahalli — Aerospace SEZ)",
+    authority: "KIADB",
+    epsg: "EPSG:32643",
+    rorName: "Bhoomi RTC (Form No. 16 Pahani Record)",
+    rorSystem: "Government of Karnataka • Bhoomi Land Records Portal",
+    tenureTitle: "Privately Owned Agricultural (Rayatwari)",
+  },
+  Dholera: {
+    label: "GIDC Dholera (SIR Expressway Zone)",
+    fullName: "Ahmedabad (Dholera Taluka — Bavaliari SIR Zone)",
+    authority: "GIDC",
+    epsg: "EPSG:32643",
+    rorName: "ગામ નમૂનો ૭/૧૨ અને ૮-અ (Village Form 7/12 & 8-A)",
+    rorSystem: "Government of Gujarat • AnyRoR Portal",
+    tenureTitle: "Satta Prakar (Old Tenure / Junisharat)",
+  },
+  Sriperumbudur: {
+    label: "SIPCOT Sriperumbudur (Electronics Corridor, NH-48)",
+    fullName: "Kanchipuram (Sriperumbudur Taluka — Mambakkam Corridor)",
+    authority: "SIPCOT",
+    epsg: "EPSG:32644",
+    rorName: "e-Adangal & Patta Chitta Extract (படிவம் அ)",
+    rorSystem: "Government of Tamil Nadu • Tamil Nilam Portal",
+    tenureTitle: "Patta Registered Ryotwari Freehold",
+  },
+  Neemrana: {
+    label: "RIICO Neemrana (Japanese Industrial Zone / DMIC)",
+    fullName: "Kotputli-Behror (Neemrana Taluka — Majrakath Corridor)",
+    authority: "RIICO",
+    epsg: "EPSG:32643",
+    rorName: "जमाबंदी नकल / खसरा विवरण (Jamabandi Nakal & RoR)",
+    rorSystem: "Government of Rajasthan • Apna Khata Portal",
+    tenureTitle: "Khatedari Right (Permanent Tenure)",
+  },
+};
+
 function SpatialMapPage({
   onToast,
   onViewAcquisition,
@@ -1416,12 +1474,13 @@ function SpatialMapPage({
   onToast: (msg: string) => void;
   onViewAcquisition: (acqId: string) => void;
 }) {
-  const [selectedDistrict, setSelectedDistrict] = useState<"Pune" | "Bengaluru">("Pune");
+  const [selectedDistrict, setSelectedDistrict] = useState<CorridorSector>("Pune");
   const [activeLayer, setActiveLayer] = useState<"cadastral" | "satellite" | "alignment">("cadastral");
   const [selectedCadastral, setSelectedCadastral] = useState<CadastralFeature>(statutoryCadastralParcels[0]);
   const [show712Modal, setShow712Modal] = useState(false);
 
-  const selectedAuthority: AuthorityCode = selectedDistrict === "Bengaluru" ? "KIADB" : "MIDC";
+  const currentSector = corridorMeta[selectedDistrict];
+  const selectedAuthority: AuthorityCode = currentSector.authority;
 
   return (
     <div className="space-y-5">
@@ -1432,7 +1491,7 @@ function SpatialMapPage({
             Cadastral Spatial GIS & Land Record Engine
           </h1>
           <p className="mt-0.5 text-[13px] text-slate-500">
-            Interactive Survey/Gat parcel geometry with 90m Right-of-Way (ROW) corridor and RoR 7/12 integration
+            Interactive Survey/Gat parcel geometry with 90m Right-of-Way (ROW) corridor and RoR integration across all 5 State Authorities
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -1483,10 +1542,10 @@ function SpatialMapPage({
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-amber-400" />
               <span className="text-[13px] font-semibold">
-                {selectedDistrict === "Pune" ? "Pune (Haveli Taluka — Wadgaon Sheri Corridor)" : "Bengaluru Rural (Devanahalli — Aerospace SEZ)"}
+                {currentSector.fullName}
               </span>
               <span className="rounded bg-white/15 px-1.5 py-0.5 font-mono text-[10px] text-slate-200">
-                EPSG:32643
+                {currentSector.epsg}
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -1494,17 +1553,19 @@ function SpatialMapPage({
               <select
                 value={selectedDistrict}
                 onChange={(e) => {
-                  const dist = e.target.value as "Pune" | "Bengaluru";
+                  const dist = e.target.value as CorridorSector;
                   setSelectedDistrict(dist);
-                  const first = statutoryCadastralParcels.find((p) =>
-                    dist === "Bengaluru" ? p.authority === "KIADB" : p.authority === "MIDC"
-                  );
+                  const targetAuth = corridorMeta[dist].authority;
+                  const first = statutoryCadastralParcels.find((p) => p.authority === targetAuth);
                   if (first) setSelectedCadastral(first);
                 }}
-                className="rounded bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white outline-none"
+                className="rounded bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white outline-none cursor-pointer hover:bg-white/15 transition"
               >
-                <option value="Pune" className="text-slate-900">MIDC Pune (Chakan Link)</option>
-                <option value="Bengaluru" className="text-slate-900">KIADB Bengaluru (Devanahalli SEZ)</option>
+                {(Object.keys(corridorMeta) as CorridorSector[]).map((key) => (
+                  <option key={key} value={key} className="text-slate-900">
+                    {corridorMeta[key].label}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -1603,7 +1664,7 @@ function SpatialMapPage({
               className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#0b2545] py-2 text-[12px] font-semibold text-white hover:bg-[#12335c] transition"
             >
               <FileSpreadsheet className="h-3.5 w-3.5 text-amber-300" />
-              View 7/12 (Saat-Baara) Extract
+              View {selectedCadastral.authority === "MIDC" ? "7/12 (Saat-Baara)" : selectedCadastral.authority === "KIADB" ? "Bhoomi RTC" : selectedCadastral.authority === "GIDC" ? "7/12 & 8-A" : selectedCadastral.authority === "SIPCOT" ? "Patta Chitta" : "Jamabandi Nakal"} RoR
             </button>
             <button
               onClick={() => onToast(`Joint Measurement Survey (JMS) notice dispatched for ${selectedCadastral.gatNo} to Revenue Inspector & Talathi.`)}
@@ -1616,7 +1677,7 @@ function SpatialMapPage({
         </div>
       </div>
 
-      {/* 7/12 Extract Modal conforming to Mahabhulekh / Bhoomi */}
+      {/* RoR Extract Modal conforming to Mahabhulekh / Bhoomi / AnyRoR / Tamil Nilam / Apna Khata */}
       {show712Modal && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-black/50 p-4" onClick={() => setShow712Modal(false)}>
           <div className="w-full max-w-xl rounded-xl bg-white p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
@@ -1626,10 +1687,10 @@ function SpatialMapPage({
                   Statutory Revenue Record (RoR)
                 </span>
                 <h3 className="text-[17px] font-bold text-slate-900 mt-1">
-                  गाव नमुना ७/१२ (Form VII & XII Extract)
+                  {currentSector.rorName}
                 </h3>
                 <p className="text-[12px] text-slate-500">
-                  Government of Maharashtra / Land Records Authority • Village: {selectedCadastral.village}, Taluka: {selectedCadastral.taluka}, District: {selectedCadastral.district}
+                  {currentSector.rorSystem} • Village: {selectedCadastral.village}, Taluka: {selectedCadastral.taluka}, District: {selectedCadastral.district}
                 </p>
               </div>
               <button onClick={() => setShow712Modal(false)} className="rounded p-1 text-slate-400 hover:bg-slate-100">
@@ -1640,7 +1701,7 @@ function SpatialMapPage({
             <div className="mt-4 space-y-3 font-mono text-[12px]">
               <div className="grid grid-cols-2 gap-2 bg-slate-50 p-3 rounded-lg border border-slate-200">
                 <div>
-                  <span className="text-[10px] text-slate-500 block">Gat / Survey Number</span>
+                  <span className="text-[10px] text-slate-500 block">Survey / Gat / Khasra No.</span>
                   <span className="font-bold text-slate-900">{selectedCadastral.gatNo}</span>
                 </div>
                 <div>
@@ -1653,12 +1714,12 @@ function SpatialMapPage({
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-500 block">Land Tenure Class</span>
-                  <span className="font-semibold text-slate-800">Class-1 Occupant (Bhogwatdar-1)</span>
+                  <span className="font-semibold text-slate-800">{currentSector.tenureTitle}</span>
                 </div>
               </div>
 
               <div className="border border-slate-200 rounded-lg p-3 bg-white">
-                <p className="text-[11px] font-bold text-slate-800 mb-1">Kabjedar (Registered Title Holder):</p>
+                <p className="text-[11px] font-bold text-slate-800 mb-1">Kabjedar / Title Holder (Owner):</p>
                 <p className="text-slate-900 font-semibold">{selectedCadastral.owner}</p>
                 <p className="text-[10px] text-slate-500 mt-1">Khata No: 4092 | Mutation (Ferfar) Entry No: 8812/2022</p>
               </div>
@@ -1678,12 +1739,12 @@ function SpatialMapPage({
               <button
                 onClick={() => {
                   setShow712Modal(false);
-                  onToast(`Digitally signed 7/12 extract for ${selectedCadastral.gatNo} generated.`);
+                  onToast(`Digitally signed RoR extract for ${selectedCadastral.gatNo} generated.`);
                 }}
                 className="inline-flex items-center gap-1.5 rounded-lg bg-[#0b2545] px-4 py-2 text-[12px] font-semibold text-white hover:bg-[#12335c] transition"
               >
                 <Download className="h-3.5 w-3.5" />
-                Download Digitally Signed PDF (e-Sign)
+                Download Digitally Signed RoR PDF (e-Sign)
               </button>
             </div>
           </div>
